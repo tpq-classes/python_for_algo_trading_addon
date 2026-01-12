@@ -1,0 +1,6 @@
+#
+# xonsh
+# 
+# Place file in root folder and rename to .xonshrc
+#
+$PROMPT='{env_name}{BOLD_GREEN}yves@{hostname} {BOLD_BLUE}{cwd_base}{branch_color}{curr_branch: {}} {BOLD_BLUE}{prompt_end} '

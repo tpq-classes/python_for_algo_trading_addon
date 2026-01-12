@@ -1,0 +1,47 @@
+   1: import xlwings as xw
+   2: wb = xw.Book()
+   3: sht = wb.sheets.active
+   4: sht
+<Sheet [Book1]Sheet1>
+   5: sht.range('A1').value = 'Hello Python for Excel World.'
+   6: t = sht.range('A1').value
+   7: t
+'Hello Python for Excel World.'
+   8: a = 10
+   9: a
+10
+  10: sht.range('A2').value = a
+  11: sht.range('A3').value = list(range(7))
+  12: import numpy as np
+  13: a = np.arange(2, 10, 0.5)
+  14: a
+array([2. , 2.5, 3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5, 7. , 7.5, 8. ,
+       8.5, 9. , 9.5])
+  15: sht.range('A4').value = a
+  16: b = np.random.random((5, 5))
+  17: b
+array([[0.90462058, 0.33411505, 0.80487932, 0.29173558, 0.97630899],
+       [0.44655384, 0.24509347, 0.01733278, 0.5959883 , 0.92322132],
+       [0.97291294, 0.81137365, 0.18147049, 0.42511315, 0.56452703],
+       [0.73353936, 0.22493934, 0.55360121, 0.79299611, 0.9113767 ],
+       [0.0981073 , 0.5906726 , 0.36250742, 0.57390679, 0.4047922 ]])
+  18: sht.range('A6').value = b
+  19: sht.range('A6').value
+0.9046205788476355
+  20: sht.range('A6').value.options(np.array).value
+  21: sht.range('A6').options(np.array).value
+array(0.90462058)
+  22: sht.range('A6').options(np.array, expand='table').value
+array([[0.90462058, 0.33411505, 0.80487932, 0.29173558, 0.97630899],
+       [0.44655384, 0.24509347, 0.01733278, 0.5959883 , 0.92322132],
+       [0.97291294, 0.81137365, 0.18147049, 0.42511315, 0.56452703],
+       [0.73353936, 0.22493934, 0.55360121, 0.79299611, 0.9113767 ],
+       [0.0981073 , 0.5906726 , 0.36250742, 0.57390679, 0.4047922 ]])
+  23: c = sht.range('A6').options(np.array, expand='table').value
+  24: b == c
+array([[ True,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True],
+       [ True,  True,  True,  True,  True]])
+  25: %history -o -n -f mentoring_01.txt

@@ -1,0 +1,46 @@
+#
+# Screen Terminal & Session Manager
+#
+
+BASICS
+======
+screen      start new screen session
+screen -ls  list all sessions
+screen -x   attach to running session
+screen -S $name     start new screen session with name
+screen -r $name     attach to session with name
+exit        getting out of session (window)
+ctrl-a      command mode (before any other command)
+?           list key bindings
+c           create new window
+n           go to next window
+p           go to previous window
+ctrl-a      go to last visited window
+<number>    go to windows 0 to 9
+d           detach
+D D         detach & logout
+\           exit all programs
+
+WINDOWS
+=======
+"           show all windows
+shift+a     rename window
+
+
+SPLIT
+=====
+S           split horizontally
+|           split vertically (not on Mac)
+tab         jump to next display region
+X           remove current region
+Q           remove all regions but current
+
+MISC
+====
+M           monitor for activity
+_           monitor for silence
+H           enable logging for session
+:           enter screen command
+:resize -v  resize region (number of lines)
+:resize -h  resize region in %
+

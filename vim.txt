@@ -1,0 +1,202 @@
+#################################
+# Navigation with Vim
+#################################
+
+PAGE
+====
+gg      beginning of file
+H       top of screen
+M       middle of screen
+L       bottom of screen
+G       bottom of file
+
+ctrl+f  down a page (forwards)
+ctrl+d  down half a page
+ctrl+u  up hald a page
+ctrl+b  up a page (backwards)
+
+PARAGRAPH
+=========
+{   beginning
+}   end
+
+SENTENCE
+========
+(   beginning
+)   end
+
+LINE
+====
+^   first
+0   beginning
+$   end
++   up
+-   down
+:#  number
+
+
+WORD
+====
+w   next beginning
+b   previous beginning
+e   next end
+
+LOGIC
+=====
+%   next brace
+*   next indent
+#   previous indent
+
+MARKER
+======
+mx  set a marker
+'x  go to marker beginning of line
+``  return to before latest jump exactly
+''  return to before latest jump beginning of line
+
+MOUSE
+=====
+set mouse=a  allow cursor placement by mouse
+
+SHELL
+=====
+ctrl+z      to leave Vim temporarily
+$ fg        to get back to Vim from the shell
+:!python %  to execute current Python script 
+map <C-x> :w<CR>:!python %<CR>  map Python script execution
+
+
+#################################
+# Changes with Vim 
+#################################
+
+UNDO
+====
+u   undo
+U   undo line
+.   repeat
+
+DELETION
+========
+x   delete char
+X   backspace
+d   delete/cut
+D   delete eol
+
+INSERTING
+=========
+i   insert mode
+I   insert beggining of line
+o   new line below
+O   new line above
+
+COPY & PASTE
+============
+v   visual mode
+V   visual lines
+y   yank/copy
+Y   yank/copy lines
+d   cut
+p   paste after
+P   paste before
+
+REPLACEMENT
+===========
+r   replace char
+R   replacement mode
+s   substitue char
+S   substitute line
+:%s/foo/bar/g   sub bar for foo
+:%s/foo/bar/gc  ask for confirmation
+:%s/foo/bar/gci case insensitive
+:%s/foo/bar/gcI case sensitive 
+
+MOVE
+====
+:m-2    current line one up
+:m+1    current line one down
+:<','>m+1    current selection one down
+:<','>m-2    current selection one up
+
+INDENTATION
+===========
+>>  indent more
+<<  indent less
+
+
+#################################
+# Searching with Vim
+#################################
+
+BASICS
+======
+f x     find next x character (in paragraph)
+;       repeats the operation
+
+?       search backwards for pattern
+/       search forwards for pattern
+
+n       next occurance
+N       previous occurance
+
+ggn     first match
+GN      last match
+
+%       go to matching bracket
+#       find occurance of word
+
+
+#################################
+# Multiple files with Vim
+#################################
+
+SPLIT WINDOWS
+=============
+sp              horizontal new split window
+sp $filepath    new window with file
+vs              vertical new split window
+ctrl+w w/W      changing between windows
+
+TABS
+====
+:tabe           new tab
+:tabe $filepath new tab with file
+:tabn           next tab
+:tabp           previous tab
+gt              next tab
+gT              previous tab
+
+SESSION
+=======
+:mksession ~/mysession.vim
+:source ~/mysession.vim
+:qa             quit all
+:wqa            save & quit all
+
+
+#################################
+# Vim Miscellaneous
+#################################
+
+HELP
+====
+:help completeopt
+
+SPELL CHECKING
+==============
+:set spell spelllang=en_us          spell check every file
+:setlocal spell spelllang=en_us     spell check this file
+:set no spell                       turn off spell checking
+
+AUTOCOMPLETION
+==============
+ctrl-n      next match
+ctrl-p      previous match
+
+:set cot=menu,preview,noinsert,nomatch
+:set complete=k**/*     includes all sub-directories
+
+BUNDLES
+=======
+https://github.com/VundleVim/Vundle.vim     bundle management
+https://github.com/davidhalter/jedi-vim     Python autocompletion
