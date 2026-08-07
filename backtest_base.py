@@ -6,11 +6,11 @@
 #
 # The Python Quants GmbH
 #
-import tpqoa
+from tpqoa import *
 import numpy as np
 import pandas as pd
 
-data_path = '../../../data/'
+data_path = '/content/python_for_algo_trading_addon'
 
 class FinancialData:
     def __init__(self, instrument, start, end, granularity):
@@ -18,8 +18,9 @@ class FinancialData:
         self.start = start
         self.end = end
         self.granularity = granularity
-        self.config_file = '../../../data/pyalgo.cfg'
-        self.api = tpqoa.tpqoa('../../../data/pyalgo.cfg')
+        self.config_file = '/content/python_for_algo_trading_addon/oanda_.cfg'[oanda]
+
+        self.api = tpqoa.tpqoa('/content/python_for_algo_trading_addon/oanda_.cfg')
         self.filename = 'oanda_{}_{}_{}_{}.csv'.format(
                     instrument, start, end, granularity)
         self.prepare_data()
