@@ -18,7 +18,7 @@ class FinancialData:
         self.start = start
         self.end = end
         self.granularity = granularity
-        self.config_file = '/content/python_for_algo_trading_addon/oanda_.cfg'[oanda]
+        self.config_file = '/content/python_for_algo_trading_addon/oanda_.cfg'
 
         self.api = tpqoa.tpqoa('/content/python_for_algo_trading_addon/oanda_.cfg')
         self.filename = 'oanda_{}_{}_{}_{}.csv'.format(
